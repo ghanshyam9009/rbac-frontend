@@ -1,0 +1,135 @@
+/* Reset body margin and set basic styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* General app container */
+.app {
+  display: flex;
+  flex-direction: row; /* Sidebar and content will be in a row */
+  height: 100vh; /* Ensure full viewport height */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px; /* Fixed width for sidebar */
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  height: 100vh; /* Full height */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixed position to prevent scrolling */
+  left: 0; /* Stick to the left side */
+  top: 0; /* Stick to the top */
+}
+
+/* Content area styling */
+.content-container {
+  margin-left: 250px; /* Offset by sidebar width to prevent clash */
+  padding: 20px;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  width: 100%; /* Ensure it takes up remaining space */
+  background-color: #f4f4f9; /* Same background for the content */
+}
+
+/* User cards container (inside content) */
+.user-cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of cards if needed */
+  gap: 20px; /* Space between cards */
+  justify-content: flex-start; /* Align cards to the left */
+  margin-top: 20px;
+}
+
+/* Individual User Card Styling */
+.user-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  width: 300px; /* Fixed width for cards */
+}
+
+.user-card.active {
+  background-color: #d4f8d4; /* Light green for active users */
+}
+
+.user-card.inactive {
+  background-color: #f8d4d4; /* Light red for inactive users */
+}
+
+/* Media Queries */
+
+/* For Small Devices (phones) */
+@media (max-width: 576px) {
+  .app {
+    flex-direction: column; /* Stack the sidebar and content vertically */
+  }
+
+  .sidebar {
+    width: 100%; /* Sidebar takes full width on mobile */
+    height: auto; /* Auto height for sidebar */
+    position: relative; /* Make the sidebar scrollable if necessary */
+  }
+
+  .content-container {
+    margin-left: 0; /* No need to offset by sidebar width */
+    padding: 10px;
+  }
+
+  .user-card {
+    width: 100%; /* Cards take full width of the container */
+    margin: 5px 0; /* Adjust margin for mobile */
+  }
+}
+
+/* For Medium Devices (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Sidebar width reduced for tablets */
+  }
+
+  .content-container {
+    margin-left: 200px; /* Offset by new sidebar width */
+  }
+
+  .user-card {
+    width: 280px; /* Adjust card width */
+  }
+}
+
+/* For Large Devices (desktops) */
+@media (min-width: 769px) {
+  .sidebar {
+    width: 250px; /* Default width for larger devices */
+  }
+
+  .content-container {
+    margin-left: 250px; /* Standard offset for desktop */
+  }
+
+  .user-card {
+    width: 300px; /* Standard card width */
+  }
+}
+
+/* For Extra Large Devices (larger desktops) */
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 300px; /* Wider sidebar for very large screens */
+  }
+
+  .content-container {
+    margin-left: 300px; /* Offset by the wider sidebar */
+  }
+
+  .user-card {
+    width: 320px; /* Wider cards for larger screens */
+  }
+}

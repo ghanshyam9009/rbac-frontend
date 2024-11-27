@@ -1,0 +1,217 @@
+/* Admin Dashboard User Summary Section */
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between; /* Ensure space between heading and button */
+  align-items: center; /* Vertically align items */
+  margin-bottom: 20px; /* Add spacing below the header section */
+}
+
+/* Search Bar and Filters in One Line */
+.controls {
+  display: flex;
+  justify-content: space-between; /* Spread items across the width */
+  align-items: center; /* Center vertically */
+  gap: 20px; /* Space between filters and search bar */
+  margin-bottom: 20px;
+}
+
+/* Search Bar Section */
+.search-bar {
+  display: flex;
+  align-items: center; /* Vertically align input and button */
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 20px; /* Spacing below the search bar */
+}
+
+.search-bar input {
+  flex: 1; /* Allow input to grow and fill available space */
+  width: 500px; /* Increased width */
+  padding: 12px 15px; /* Comfortable padding */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1rem; /* Font size for readability */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #4CAF50; /* Highlight color on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Subtle glow effect */
+  outline: none; /* Remove default outline */
+}
+
+.search-bar button {
+  padding: 10px 15px; /* Add padding for button */
+  background-color: #4CAF50; /* Primary button color */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1rem; /* Font size for consistency */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.search-bar button:active {
+  transform: translateY(0); /* Reset on click */
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  gap: 15px; /* Space between filter dropdowns */
+}
+
+.filters select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* User Summary Cards */
+.user-summary {
+  display: flex;
+  justify-content: space-between; /* Align cards in one row */
+  gap: 15px; /* Space between cards */
+  margin-bottom: 30px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding: 10px; /* Padding for overall container */
+}
+
+.summary-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 22%; /* Smaller width for fitting four cards in a line */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee; /* Subtle border for better visibility */
+}
+
+.summary-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow on hover */
+}
+
+.summary-item h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.summary-item p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #4CAF50; /* Green for emphasis */
+}
+
+.summary-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.summary-item ul li {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.summary-item ul li span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Horizontal Scroll Styling */
+.user-summary::-webkit-scrollbar {
+  height: 8px;
+}
+
+.user-summary::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.user-summary::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.user-summary::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Add New User Button */
+.add-user-btn {
+  background-color: #4CAF50; /* Primary green color */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 12px 18px; /* Adjusted padding for a balanced look */
+  border-radius: 8px; /* Smooth rounded corners */
+  font-size: 1rem; /* Uniform font size */
+  font-weight: bold; /* Bold text for emphasis */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  display: inline-block; /* Inline for better alignment */
+}
+
+.add-user-btn:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+  transform: translateY(-3px); /* Subtle lift effect */
+}
+
+.add-user-btn:active {
+  background-color: #3e8e41; /* Darker green on click */
+  transform: translateY(0); /* Reset position */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow */
+}
+
+/* Add New Button Placement */
+.add-user-btn-container {
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+  margin-top: 20px; /* Add spacing from content above */
+}
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .summary-item {
+    width: 30%; /* Slightly wider for smaller screens */
+  }
+
+  .controls {
+    flex-wrap: wrap; /* Allow filters and search bar to stack */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .summary-item {
+    width: 100%; /* Stack cards vertically on small screens */
+  }
+
+  .controls {
+    flex-direction: column; /* Stack filters and search bar */
+  }
+
+  .search-bar input {
+    width: 100%; /* Full-width input */
+  }
+}
